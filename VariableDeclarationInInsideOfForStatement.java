@@ -13,6 +13,11 @@ public class VariableDeclarationInInsideOfForStatement {
         // System.out.println("[9] lastNumber:" + lastNumber); //この文はエラーになる。
         System.out.println("");
 
-        
+        int lastNumber = 0;//[1]
+        for (int number = 1; number <= 5; number++) {//[2]
+            lastNumber = number;//[3]
+            System.out.println("[4] lastNumber:" + lastNumber);
+        }
+        System.out.println("[5] lastNumber:" + lastNumber);
     }
 }
