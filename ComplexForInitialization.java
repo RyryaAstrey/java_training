@@ -8,7 +8,7 @@ public class ComplexForInitialization {
         int a = 0, b = 0, c = 0;//[5]
         System.out.println("[6] 初期化:a = 1, b ++, c = a + 2");
         for (a = 1, b ++, c = a + 2; a < 5; a ++) {//[7]
-            System.out.print("[8]-" + a + "," + b + "," + c + " ")
+            System.out.print("[8]-" + a + "," + b + "," + c + " ");
         }
     }
 }
