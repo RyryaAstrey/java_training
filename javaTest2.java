@@ -1,8 +1,22 @@
 public class javaTest2 {
     public static void main(String[] args) throws Exception{
-        System.out.println("引数は" + args.length + "個指定されています。");
-        for(int idx = 0; idx < args.length; idx ++) {
-            System.out.println((idx + 1) + "番目の引数は" + args[idx] + "です。");
+        try{
+            String name = null;
+            name = name.substring(0);//[1]
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+        try{
+            String values[] = new String[2];
+            values[2] = "value";//[2]
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+        try{
+            Object value = "value";
+            Integer number = (Integer)value;//[3]
+        } catch(Exception ex){
+            ex.printStackTrace();
         }
     }
 }
