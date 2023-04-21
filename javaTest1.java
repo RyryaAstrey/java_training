@@ -7,18 +7,24 @@ public class javaTest1 {
         // 入力パラメータを読み込む
         String input = br.readLine();
         String[] param = input.split(" ");//入力値を空白で分解する
-	int num1 = Integer.parseInt(param[0]);//①
-    String type = param[1];
-    int num2 = Integer.parseInt(param[2]);
-
-    if(type.equals("+")){
-        System.out.println(num1 + num2);
-    } else if(type.equals("-")){
-        System.out.println(num1 - num2);
-    } else if(type.equals("*")){
-        System.out.println(num1 * num2);
-    } else if(type.equals("/")){
-        System.out.println(num1 / num2 + "..." + num1 % num2);
-    }
+        String type = null ;
+        Integer sum = 0 ;
+        for(int idx = 0 ; idx < param.length; idx ++){//①
+        if(param[idx].equals("+") || param[idx].equals("-")){//②
+                type = param[idx] ;
+        }else{
+                Integer num = Integer.parseInt(param[idx]);//③
+                if(type != null){//④
+                    if(type.equals("+")){
+                        sum = sum + num;
+                    }else if(type.equals("-")){
+                        sum = sum - num;
+                    }
+                }else{
+                  sum = num ;//⑤
+                }
+            }
+        }
+        System.out.println(sum);
     }
 }
